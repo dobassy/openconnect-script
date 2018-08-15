@@ -1,0 +1,18 @@
+#!/bin/bash
+unset INTERNAL_IP4_DNS
+
+# Change according to the number of routes to added
+export CISCO_SPLIT_INC=2
+
+# CISCO_SPLIT_INC_<NUMBER>_XXXX
+# NUMBER: Increment sequentially from 0
+export CISCO_SPLIT_INC_0_ADDR=192.168.100.0
+export CISCO_SPLIT_INC_0_MASK=255.255.255.0
+export CISCO_SPLIT_INC_0_MASKLEN=24
+
+export CISCO_SPLIT_INC_1_ADDR=10.168.120.0
+export CISCO_SPLIT_INC_1_MASK=255.255.255.0
+export CISCO_SPLIT_INC_1_MASKLEN=24
+
+# Replace the path below with the location where the original script is located
+exec /usr/local/etc/vpnc-script "$@"
