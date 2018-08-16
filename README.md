@@ -20,6 +20,12 @@ What's vpnc?
 > 
 > via [Install a vpnc-script - OpenConnect VPN client.](http://www.infradead.org/openconnect/vpnc-script.html)
 
+Warning
+
+[vpnc's brew fomula is Inactive][vpnc-brew] as of August 2018. Probably source compilation is necessary.
+
+[vpnc-brew]: http://brewformulas.org/vpnc "Vpnc — BrewFormulas"
+
 ## Setup environment
 
 ```
@@ -34,8 +40,7 @@ sudo openconnect \
      --user=<youruser-id>@<company-domain-name> \
      --authgroup=<set here>     \
      --script=~/path/to/vpnc-script \
-     --no-cert-check \
-     --proxy=http://<if you use proxy> \
+     --no-cert-check \        # if you need to skip the cert validation.
      <vpn-server-fqdn-or-IP>
 ```
 
@@ -46,7 +51,7 @@ sudo openconnect \
      --user=<youruser-id>@<company-domain-name> \
      --authgroup=<set here>     \
      --script=~/path/to/vpnc-script \
-     --no-cert-check \
+     --proxy=http://<if you use proxy> \
      <vpn-server-fqdn-or-IP>
 ```
 
